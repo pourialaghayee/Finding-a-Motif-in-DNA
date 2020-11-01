@@ -1,0 +1,25 @@
+f = open("rosalind_subs.txt", "r")
+dataset = f.read()
+data = dataset.split()
+a = data[0]
+b = data[1]
+for i in range(len(b)):
+    a+="/"
+num = []
+x = len(b)
+for i in range(len(a)):
+    z = 0
+    for j in range(len(b)):
+        if(b[j] == a[i+j]):
+            z+=1
+            continue
+        else: break
+    if(z == x):
+        num.append(i+1)
+g = open("demofile2.txt", "w")
+for i in range(len(num)):
+    g.write(str(num[i])+" ")
+g.close()
+
+m = open("demofile2.txt", "r")
+print(m.read())
